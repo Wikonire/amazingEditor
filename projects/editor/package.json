@@ -2,8 +2,8 @@
   "name": "editor",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^12.1.0",
-    "@angular/core": "^12.2.16"
+    "@angular/common": "^13.2.3",
+    "@angular/core": "^13.2.3"
   },
   "dependencies": {
     "tslib": "^2.2.0"
