@@ -1,0 +1,124 @@
+@use 'ae-variables' as variables;
+@use 'ae-animations';
+@import '~@angular/cdk/overlay-prebuilt.css';
+
+@include ae-animations.ae-fadeIn-animation;
+@include ae-animations.ae-float-animation;
+@include ae-animations.ae-float-animation-bottom();
+@include ae-animations.ae-float-animation-top();
+@include ae-animations.ae-float-animation-right();
+@include ae-animations.ae-float-animation-left();
+@include ae-animations.ae-pang-animation();
+@include ae-animations.ae-rotate-animation();
+@include ae-animations.ae-stretch-animation();
+$arrow-size: 8px;
+
+@mixin ae-tooltip {
+  $background-color: rgba(variables.$primary-color, 0.8);
+
+  .ae-tooltip {
+    font-size: inherit;
+    font-family: inherit;
+    opacity: 0;
+    border-radius: variables.$border-radius;
+    position: absolute;
+    display: inline-block;
+    background-color: $background-color;
+    padding: 1%;
+    color: white;
+    }
+
+  .ae-tooltip-right {
+    width: fit-content;
+    top: -100%;
+    left: 105%;
+    }
+  .ae-tooltip-right::after {
+    /* arrow to the left of the tooltip */
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -$arrow-size;
+    border-width: $arrow-size;
+    border-style: solid;
+    border-color: transparent $background-color transparent transparent;
+    }
+
+  .ae-tooltip-left {
+    width: fit-content;
+    top: -5px;
+    right: 105%;
+    }
+
+  .ae-tooltip-left::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%; /* To the right of the tooltip */
+    margin-top: -$arrow-size;
+    border-width: $arrow-size;
+    border-style: solid;
+    border-color: transparent transparent transparent $background-color;
+    }
+
+  .ae-tooltip-bottom {
+    width: fit-content;
+    top: 100%;
+    left: 50%; /* Use half of the width (120/2 = 60), to center the tooltip */
+    }
+
+  .ae-tooltip-bottom::after {
+    content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 50%;
+    margin-left: -$arrow-size;
+    border-width: $arrow-size;
+    border-style: solid;
+    border-color: transparent transparent $background-color transparent;
+    }
+
+  .ae-tooltip-top {
+    width: fit-content;
+      top: 100%;
+      left: 50%;
+    }
+
+  .ae-tooltip-top::after {
+    content: " ";
+    position: absolute;
+    top: 100%; /* At the bottom of the tooltip */
+    left: 50%;
+    margin-left: -$arrow-size;
+    border-width: $arrow-size;
+    border-style: solid;
+    border-color: $background-color transparent transparent transparent;
+    }
+  .ae-tooltip-stretch-animation {
+    @include ae-animations.animation(.1,2s, ae-stretch-animation, ease );
+    }
+
+  .ae-tooltip-pang-animation {
+    @include ae-animations.animation(0,1s, ae-pang-animation, ease);
+    }
+
+  .ae-tooltip-rotate-animation {
+    @include ae-animations.animation(.15s, 1s, ae-rotate-animation, ease);
+    }
+  .ae-tooltip-float-animation-left {
+    @include ae-animations.animation(.15s, 1s, ae-float-animation-left, ease);
+    }
+  .ae-tooltip-float-animation-right{
+    @include ae-animations.animation(.15s, 1s, ae-float-animation-right, ease);
+    }
+  .ae-tooltip-float-animation-top{
+    @include ae-animations.animation(.15s, 1s, ae-float-animation-top, ease);
+    }
+
+  .ae-tooltip-float-animation-bottom {
+    @include ae-animations.animation(.15s, 1s, ae-float-animation-bottom, ease);
+    }
+  }
+
+

@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+@use "projects/editor/src/lib/_shared/ae-styles";
+
+@include ae-styles.ae-tooltip();
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  }
+.buttons {
+  margin: 2em;
+  }

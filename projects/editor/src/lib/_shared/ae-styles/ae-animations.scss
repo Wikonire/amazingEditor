@@ -1,0 +1,234 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+
+@mixin keyframe ($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+    }
+
+  @-moz-keyframes #{$animation-name} {
+    @content;
+    }
+
+  @-o-keyframes #{$animation-name} {
+    @content;
+    }
+
+  @keyframes #{$animation-name} {
+    @content;
+    }
+  }
+@mixin animation ($delay, $duration, $animation, $direction: forward, $fillmode: fowards) {
+  -webkit-animation: {
+    delay: $delay;
+    name: $animation;
+    fill-mode: $fillmode;
+    direction: $direction;
+    }
+  -moz-animation: {
+    delay: $delay;
+    name: $animation;
+    fill-mode: $fillmode;
+    direction: $direction;
+    }
+  animation: {
+    delay: $delay;
+    name: $animation;
+    fill-mode: $fillmode;
+    direction: $direction;
+    }
+  }
+
+@mixin ae-float-animation-right(
+  $zeroPercent:("xAxis":"-5px", "yAxis": "0px"),
+$twentyPercent: ("xAxis":"2px", "yAxis": "0px"),
+$fiftyPercent: ("xAxis":"-3px", "yAxis": "0px"),
+$eightyPercent: ("xAxis":"-3px", "yAxis": "0px"),
+$hundredPercent: ("xAxis":"-3px", "yAxis": "0px")) {
+  @include keyframe(ae-float-animation-right) {
+    0% {
+      transform: translate(string.unquote(map.get($zeroPercent, "xAxis")), string.unquote(map.get($zeroPercent, "yAxis")));
+      }
+    20% {
+      transform: translate(string.unquote(map.get($twentyPercent, "xAxis")), map.get($twentyPercent, "yAxis"));
+      }
+    50% {
+      transform: translate(string.unquote(map.get($fiftyPercent, "xAxis")), string.unquote(map.get($fiftyPercent, "yAxis")));
+      }
+    80% {
+      transform: translate(string.unquote(map.get($eightyPercent, "xAxis")), string.unquote(map.get($eightyPercent, "yAxis")));
+      }
+    100% {
+      transform: translate(string.unquote(map.get($hundredPercent, "xAxis")), string.unquote(map.get($hundredPercent, "yAxis")));
+      }
+    }
+  }
+
+@mixin ae-fadeIn-animation {
+  @include keyframe(ae-fadeIn-animation) {
+    from {opacity: 0;}
+    to {opacity: 1;}
+    }
+  }
+
+@mixin ae-float-animation-top(
+  $zeroPercent:("xAxis":"0px", "yAxis": "-5px"),
+  $twentyPercent: ("xAxis":"0px", "yAxis": "2px"),
+  $fiftyPercent: ("xAxis":"0px", "yAxis": "-3px"),
+  $eightyPercent: ("xAxis":"0px", "yAxis": "-3px"),
+  $hundredPercent: ("xAxis":"0px", "yAxis": "-3px")) {
+  @include keyframe(ae-float-animation-top) {
+    0% {
+      transform: translate(string.unquote(map.get($zeroPercent, "xAxis")), string.unquote(map.get($zeroPercent, "yAxis")));
+      }
+    20% {
+      transform: translate(string.unquote(map.get($twentyPercent, "xAxis")), map.get($twentyPercent, "yAxis"));
+      }
+    50% {
+      transform: translate(string.unquote(map.get($fiftyPercent, "xAxis")), string.unquote(map.get($fiftyPercent, "yAxis")));
+      }
+    80% {
+      transform: translate(string.unquote(map.get($eightyPercent, "xAxis")), string.unquote(map.get($eightyPercent, "yAxis")));
+      }
+    100% {
+      transform: translate(string.unquote(map.get($hundredPercent, "xAxis")), string.unquote(map.get($hundredPercent, "yAxis")));
+      }
+    }
+  }
+
+@mixin ae-float-animation-bottom(
+  $zeroPercent: ("xAxis":"0px", "yAxis": "5px"),
+  $twentyPercent: ("xAxis":"0px", "yAxis": "-2px"),
+  $fiftyPercent: ("xAxis":"0px", "yAxis": "3px"),
+  $eightyPercent: ("xAxis":"0px", "yAxis": "3px"),
+$hundredPercent: ("xAxis":"0px", "yAxis": "3px")) {
+  @include keyframe(ae-float-animation-bottom){
+    0% {
+      transform: translate(string.unquote(map.get($zeroPercent, "xAxis")), string.unquote(map.get($zeroPercent, "yAxis")));
+      }
+    20% {
+      transform: translate(string.unquote(map.get($twentyPercent, "xAxis")), map.get($twentyPercent, "yAxis"));
+      }
+    50% {
+      transform: translate(string.unquote(map.get($fiftyPercent, "xAxis")), string.unquote(map.get($fiftyPercent, "yAxis")));
+      }
+    80% {
+      transform: translate(string.unquote(map.get($eightyPercent, "xAxis")), string.unquote(map.get($eightyPercent, "yAxis")));
+      }
+    100% {
+      transform: translate(string.unquote(map.get($hundredPercent, "xAxis")), string.unquote(map.get($hundredPercent, "yAxis")));
+      }
+    }
+  }
+
+@mixin ae-float-animation-left(
+  $zeroPercent: ("xAxis":"5px", "yAxis": "0px"),
+  $twentyPercent: ("xAxis":"-2px", "yAxis": "0px"),
+  $fiftyPercent: ("xAxis":"3px", "yAxis": "0px"),
+  $eightyPercent: ("xAxis":"3px", "yAxis": "0px"),
+$hundredPercent: ("xAxis":"3px", "yAxis": "0px")) {
+  @include keyframe(ae-float-animation-left){
+    0% {
+      transform: translate(string.unquote(map.get($zeroPercent, "xAxis")), string.unquote(map.get($zeroPercent, "yAxis")));
+      }
+    20% {
+      transform: translate(string.unquote(map.get($twentyPercent, "xAxis")), map.get($twentyPercent, "yAxis"));
+      }
+    50% {
+      transform: translate(string.unquote(map.get($fiftyPercent, "xAxis")), string.unquote(map.get($fiftyPercent, "yAxis")));
+      }
+    80% {
+      transform: translate(string.unquote(map.get($eightyPercent, "xAxis")), string.unquote(map.get($eightyPercent, "yAxis")));
+      }
+    100% {
+      transform: translate(string.unquote(map.get($hundredPercent, "xAxis")), string.unquote(map.get($hundredPercent, "yAxis")));
+      }
+    }
+  }
+
+
+@mixin ae-rotate-animation {
+  @include keyframe(ae-rotate-animation) {
+    0% {
+      transform: rotate(0) scale(1);
+      }
+    5% {
+      transform: rotate(5deg) scale(.98);
+      }
+    20% {
+      transform: rotate(3deg) scale(.93);
+      }
+    55% {
+      transform: rotate(0) scale(.97);
+      }
+    80% {
+      transform: rotate(-5deg) scale(.94);
+      }
+    90% {
+      transform: rotate(-3deg) scale(1);
+      }
+    100% {
+      transform: rotate(0deg) scale(1);
+      }
+    }
+  }
+
+@mixin ae-float-animation {
+  @include keyframe(ae-float-animation) {
+    0% {
+      transform: translate(5px, 0px);
+      }
+    20% {
+      transform: translate(-2px, 0px);
+      }
+    55% {
+      transform: translate(3px, 0px);
+      }
+    80% {
+      transform: translate(3px, 0px);
+      }
+    100% {
+      transform: translate(3px, 0px);
+      }
+    }
+  }
+
+@mixin ae-pang-animation {
+  @include keyframe(ae-pang-animation) {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+      }
+    40% {
+      transform: scale(1);
+      opacity: 1;
+      }
+    100% {
+      transform: scale(1.1);
+      opacity: 0;
+      }
+    }
+  }
+
+
+@mixin ae-stretch-animation {
+  @include keyframe(ae-stretch-animation) {
+    0% {
+      transform: scale(1, 1)
+      }
+    10% {
+      transform: scale(1.1, .9)
+      }
+    30% {
+      transform: scale(.9, 1.1)
+      }
+    50% {
+      transform: scale(1.05, .95)
+      }
+    100% {
+      transform: scale(1, 1)
+      }
+    }
+  }
+
