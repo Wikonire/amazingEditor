@@ -1,0 +1,22 @@
+<div class="ae-code-preview">
+  <mat-tab-group>
+    <mat-tab *ngFor="let file of files | async">
+      <ng-template mat-tab-label>
+        <ng-container *ngTemplateOutlet="tabTitle;context:{ $implicit: file, label:file.label, subtitle: file.subtitle  }"></ng-container>
+      </ng-template>
+      <ng-template matTabContent>
+        <!-- Content projection is used to get the content HTML provided to this component -->
+        <ae-code-preview-content [hide-copy]=false [header]="file.label">
+          <ng-content ></ng-content>
+        </ae-code-preview-content>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<ng-template #tabTitle let-file>
+  <div class="tab-title">
+    <p class="file-type">{{file.label}}</p>
+    <p class="file-name">{{file.subtitle}}</p>
+  </div>
+</ng-template>
+

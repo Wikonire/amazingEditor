@@ -2,15 +2,12 @@ import { Injectable } from '@angular/core';
 import {defaultTooltipAnimations} from './default-tooltip-animations';
 import {TooltipDefaultAnimation, TooltipPlacement, TooltipShowHideAnimation} from './tooltip.types';
 import {
-  animation,
   AnimationBuilder,
-  AnimationFactory,
   AnimationMetadata,
-  AnimationMetadataType,
   AnimationPlayer
 } from '@angular/animations';
 import {AeAnimationService} from '../animation/animation.service';
-import {AeAnimationKeyframeStep, AeAnimationKeyframeSteps} from '../animation/animation-keyframe-step';
+import {AeAnimationKeyframeStep} from '../animation/animation-keyframe-step';
 
 @Injectable({ providedIn: 'root'})
 export class AeTooltipAnimationService {

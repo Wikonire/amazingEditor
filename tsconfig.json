@@ -6,6 +6,10 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "paths": {
+      "clarity-lib": [
+        "dist/clarity-lib/clarity-lib",
+        "dist/clarity-lib"
+      ],
       "editor": [
         "dist/editor/editor",
         "dist/editor"

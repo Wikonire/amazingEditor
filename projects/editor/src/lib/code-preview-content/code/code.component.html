@@ -1,0 +1,8 @@
+
+<pre >
+  <code #codeContainer></code>
+    <button mat-mini-fab class="copy-button" color="primary" [cdkCopyToClipboard]="doCopy()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">content_copy</mat-icon>
+    </button>
+</pre>
+<div [innerHTML]="(code|safe: 'html')"></div>

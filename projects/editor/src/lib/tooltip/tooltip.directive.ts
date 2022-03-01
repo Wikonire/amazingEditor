@@ -1,7 +1,6 @@
 import {Directive, ElementRef, HostListener, Input, Renderer2} from '@angular/core';
 import {AnimationBuilder, AnimationMetadata, AnimationPlayer} from '@angular/animations';
 import {TooltipCloseKeys, TooltipPlacement, TooltipSemantic, TooltipShowHideAnimation} from './tooltip.types';
-import {AeTooltipAnimationService} from './tooltip-animation.service';
 import {AeAnimationKeyframeStep} from '../animation/animation-keyframe-step';
 import {defaultTooltipAnimations} from './default-tooltip-animations';
 import {AeAnimationService} from '../animation/animation.service';
@@ -26,8 +25,7 @@ export class AeTooltipDirective {
   private aeTooltip?: HTMLElement;
   private animationPlayer?: AnimationPlayer;
 
-  constructor(private animationBuilder: AnimationBuilder, private animationService: AeAnimationService, private elementRef: ElementRef, private renderer: Renderer2, private overlayPositionBuilder: OverlayPositionBuilder,
-              private overlay: Overlay) {
+  constructor(private animationBuilder: AnimationBuilder, private animationService: AeAnimationService, private elementRef: ElementRef, private renderer: Renderer2) {
   }
 
   @HostListener('mouseenter') onMouseEnter() {

@@ -1,6 +1,5 @@
 @use 'ae-variables' as variables;
 @use 'ae-animations';
-@import '~@angular/cdk/overlay-prebuilt.css';
 
 @include ae-animations.ae-fadeIn-animation;
 @include ae-animations.ae-float-animation;

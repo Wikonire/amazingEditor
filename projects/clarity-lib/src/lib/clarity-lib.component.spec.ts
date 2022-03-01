@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AeEditorComponent } from './editor.component';
+import { ClarityLibComponent } from './clarity-lib.component';
 
-describe('EditorComponent', () => {
-  let component: AeEditorComponent;
-  let fixture: ComponentFixture<AeEditorComponent>;
+describe('ClarityLibComponent', () => {
+  let component: ClarityLibComponent;
+  let fixture: ComponentFixture<ClarityLibComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AeEditorComponent ]
+      declarations: [ ClarityLibComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(AeEditorComponent);
+    fixture = TestBed.createComponent(ClarityLibComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

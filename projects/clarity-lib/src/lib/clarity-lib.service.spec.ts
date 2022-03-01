@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EditorService } from './editor.service';
+import { ClarityLibService } from './clarity-lib.service';
 
-describe('EditorService', () => {
-  let service: EditorService;
+describe('ClarityLibService', () => {
+  let service: ClarityLibService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EditorService);
+    service = TestBed.inject(ClarityLibService);
   });
 
   it('should be created', () => {

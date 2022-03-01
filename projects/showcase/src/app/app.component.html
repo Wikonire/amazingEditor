@@ -1,11 +1,21 @@
-<div class="buttons">
+<ng-template class="buttons" #buttons>
   <ae-button [aeTooltip]="'tootip on left'" buttonText="left" [placement]="placement.left" [tooltipShowHideAnimation]="'transformLeft'"></ae-button>
   <ae-button [aeTooltip]="'tootip on bottom'" buttonText="bottom" [placement]="placement.bottom" [tooltipShowHideAnimation]="'transformBottom'"></ae-button>
   <ae-button [aeTooltip]="'tootip on top'" buttonText="top" [placement]="placement.top" [tooltipShowHideAnimation]="'transformTop'"></ae-button>
   <ae-button [aeTooltip]="'tootip on right'" buttonText="right" [placement]="placement.right" [tooltipShowHideAnimation]="'transformRight'"></ae-button>
   <ae-button [aeTooltip]="'fadeInOut'" buttonText="fadeInOut" [placement]="placement.right" [tooltipShowHideAnimation]="'fadeInOut'"></ae-button>
   <ae-button [aeTooltip]="'rotateInOut'" buttonText="rotateInOut" [placement]="placement.right" [tooltipShowHideAnimation]="'rotateInOut'"></ae-button>
-</div>
+</ng-template>
 
+<ae-code-preview>
+  <label>I am a label</label>
+  <p>I am a paragraph</p>
+  <div>
+    <h1>Title</h1>
+    <div>
+    </div>
+  </div>
+
+</ae-code-preview>
 
 <router-outlet></router-outlet>

@@ -3,15 +3,17 @@
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^13.2.3",
-    "@angular/core": "^13.2.3"
+    "@angular/core": "^13.2.3",
+    "@angular/material": "13.2.4"
   },
   "dependencies": {
     "@angular/cdk": "^13.2.3",
+    "@angular/material": "^13.2.4",
     "tslib": "^2.2.0"
   },
   "exports": {
     ".": {
-      "sass": "./src/lib/_shared/scss/_index.scss"
+      "sass": "./src/lib/_shared/ae-styles/_index.scss"
     }
   }
 }
